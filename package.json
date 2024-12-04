@@ -27,7 +27,8 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-native": "^4.1.0",
     "globals": "^15.13.0",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "eslint-config-expo": "~8.0.1"
   },
   "private": true
 }
