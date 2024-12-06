@@ -20,7 +20,6 @@ export default function QuizScreen({ route }) {
   const [points, setPoints] = useState(0);
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalMessage, setModalMessage] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
   const [disabled, setDisabled] = useState(false);
 
@@ -28,7 +27,6 @@ export default function QuizScreen({ route }) {
     if (isCorrect) {
       setPoints(points + 1);
     }
-    setModalMessage(isCorrect ? 'Correct!' : 'Incorrect!');
     setIsCorrect(isCorrect);
     setModalVisible(true);
     setDisabled(true);
@@ -90,7 +88,9 @@ export default function QuizScreen({ route }) {
               { backgroundColor: isCorrect ? '#4caf50' : '#f44336' },
             ]}
           >
-            <Text style={styles.modalText}>{modalMessage}</Text>
+            <Text style={styles.modalText}>
+              {isCorrect ? 'Correct!' : 'Incorrect!'}
+            </Text>
             <Button
               style={styles.continueButton}
               onPress={handleContinue}
