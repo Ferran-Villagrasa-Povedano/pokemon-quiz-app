@@ -97,7 +97,9 @@ export default {
       ],
     },
     {
-      question: { text: "Quin és el nom de l'equip vilà a la regió de Kanto?" },
+      question: {
+        text: "Quin és el nom de l'equip villà a la regió de Kanto?",
+      },
       answers: [
         { text: 'Team Rocket', isCorrect: true },
         { text: 'Team Magma' },
