@@ -6,6 +6,7 @@ import {
   Alert,
   Pressable,
   TextInput,
+  StyleSheet
 } from 'react-native';
 import baseStyles from '../styles/base';
 import { useNavigation } from '@react-navigation/native';
@@ -14,6 +15,7 @@ import { useState } from 'react-native';
 export default function HomeScreen() {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
+  const [text, onChangeText] = useState('Nom');
 
   return (
     <View style={baseStyles.container}>
