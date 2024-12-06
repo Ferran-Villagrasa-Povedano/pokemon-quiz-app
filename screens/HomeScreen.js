@@ -6,7 +6,7 @@ import {
   Alert,
   Pressable,
   TextInput,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 import baseStyles from '../styles/base';
 import { useNavigation } from '@react-navigation/native';
