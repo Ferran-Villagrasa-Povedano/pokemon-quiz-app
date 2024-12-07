@@ -75,7 +75,7 @@ export default {
       ],
     },
     {
-      question: { text: "Què Pokémon té l'habilitat de parlar en la sèrie?" },
+      question: { text: "Quin Pokémon té l'habilitat de parlar en la sèrie?" },
       answers: [
         {
           image:
@@ -137,7 +137,7 @@ export default {
       question: {
         text: "Com es diu l'evolució de Charmander?",
         image:
-          'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/f/fb/latest/20200411222755/Charmeleon.png/300px-Charmeleon.png',
+          'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/f/fb/latest/20200411222755/Charmander.png/300px-Charmander.png',
       },
       answers: [
         { text: 'Charmeleon', isCorrect: true },
@@ -176,7 +176,7 @@ export default {
     },
     {
       question: {
-        text: 'Quin tipus és resistent al tipus Elèctric?',
+        text: 'Quin tipus és neutral al tipus Elèctric?',
         image:
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/a/a2/latest/20230317204740/Energ%C3%ADa_Rayo_B%C3%A1sica_%28Escarlata_y_P%C3%BArpura_TCG%29.png/375px-Energ%C3%ADa_Rayo_B%C3%A1sica_%28Escarlata_y_P%C3%BArpura_TCG%29.png',
       },
@@ -226,7 +226,7 @@ export default {
     },
     {
       question: {
-        text: 'Què Pokémon té el número 150 en la Pokédex Nacional?',
+        text: 'Quin Pokémon es el número 150 en la Pokédex Nacional?',
         image:
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/b/b7/latest/20101009152426/Pok%C3%A9dex_GenI_Kanto.png/285px-Pok%C3%A9dex_GenI_Kanto.png',
       },
@@ -252,7 +252,7 @@ export default {
     },
     {
       question: {
-        text: 'Què Pokémon inicial és de tipus Aigua a la regió de Hoenn?',
+        text: 'Quin s el Pokémon inicial de tipus Aigua a la regió de Hoenn?',
       },
       answers: [
         {
@@ -276,15 +276,24 @@ export default {
     },
     {
       question: {
-        text: "Com es diu l'evolució final de Ralts?",
+        text: 'Quina és una de les evolucións finals de Ralts?',
         image:
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/e/e8/latest/20141214185208/Ralts.png/200px-Ralts.png',
       },
       answers: [
-        { text: 'Gardevoir', isCorrect: true },
-        { text: 'Kirlia' },
-        { text: 'Gallade' },
-        { text: 'Gothitelle' },
+        {
+          text: 'Gardevoir',
+          isCorrect: true,
+        },
+        {
+          text: 'Kirlia',
+        },
+        {
+          text: 'Ferropaladín',
+        },
+        {
+          text: 'Gothitelle',
+        },
       ],
     },
     {
@@ -311,7 +320,7 @@ export default {
     },
     {
       question: {
-        text: 'Quin tipus és feble contra el tipus Drac?',
+        text: 'Contra quin tipus és eficaç el tipus drac?',
         image:
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/4/4d/latest/20120121025004/TCG_Tipo_Drag%C3%B3n.png/270px-TCG_Tipo_Drag%C3%B3n.png',
       },
@@ -329,9 +338,9 @@ export default {
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/0/03/latest/20230717180418/Ditto.png/200px-Ditto.png',
       },
       answers: [
-        { text: 'Transformació', isCorrect: true },
+        { text: 'Impostor', isCorrect: true },
         { text: 'Imitació' },
-        { text: 'Impostor' },
+        { text: 'Transformació' },
         { text: 'Metamorfosi' },
       ],
     },
@@ -362,7 +371,7 @@ export default {
       ],
     },
     {
-      question: { text: "Què Pokémon té l'habilitat única Desesper (Truant)?" },
+      question: { text: "Quin Pokémon té l'habilitat única Mandra (Truant)?" },
       answers: [
         {
           image:
@@ -411,7 +420,7 @@ export default {
     },
     {
       question: {
-        text: 'Què Pokémon introduït a la regió de Galar té la forma regional de tipus Fantasma?',
+        text: 'Quin Pokémon introduït a la regió de Galar té la forma regional de tipus Fantasma?',
       },
       answers: [
         {
@@ -429,7 +438,7 @@ export default {
         },
         {
           image:
-            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/5/5f/latest/20230628041337/Ponyta.png/200px-Ponyta.png',
+            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/a/a7/latest/20190406150949/Zigzagoon.png/300px-Zigzagoon.png',
         },
       ],
     },
@@ -448,7 +457,7 @@ export default {
     },
     {
       question: {
-        text: "Què Pokémon es necessita per a activar l'esdeveniment del Regigigas en Pokémon Platí?",
+        text: "Quin Pokémon es necessita per a activar l'esdeveniment del Regigigas en Pokémon Platí?",
         image:
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/f/f4/latest/20211108120853/Car%C3%A1tula_Pok%C3%A9mon_Platino_%28ESP%29.png/375px-Car%C3%A1tula_Pok%C3%A9mon_Platino_%28ESP%29.png',
       },
@@ -461,17 +470,17 @@ export default {
     },
     {
       question: {
-        text: "Quin és el Pokémon singular que només es podia obtenir mitjançant l'esdeveniment de Pokémon Ranch?",
+        text: "Quin és el Pokémon singular que només es podia obtenir mitjançant l'esdeveniment de Pokemon Ranger?",
       },
       answers: [
         {
           image:
-            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/d/d3/latest/20190408034831/Mewtwo.png/200px-Mewtwo.png',
+            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/d/dd/latest/20150214173704/Manaphy.png/200px-Manaphy.png',
           isCorrect: true,
         },
         {
           image:
-            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/d/dd/latest/20150214173704/Manaphy.png/200px-Manaphy.png',
+            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/d/d3/latest/20190408034831/Mewtwo.png/200px-Mewtwo.png',
         },
         {
           image:
