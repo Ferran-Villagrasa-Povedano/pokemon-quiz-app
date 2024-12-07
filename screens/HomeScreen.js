@@ -3,18 +3,20 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
   StyleSheet,
   Alert,
+  useColorScheme,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // Import useNavigation for navigation
 import { Picker } from '@react-native-picker/picker';
 import { Button } from 'react-native';
+import ThemeToggler from '../components/ThemeToggler';
 
 const DifficultySelection = () => {
   const [username, setUsername] = useState('');
   const [difficulty, setDifficulty] = useState('easy');
   const navigation = useNavigation();
+  const theme = useColorScheme();
 
   const handleContinuePress = () => {
     if (!username) {
@@ -26,7 +28,6 @@ const DifficultySelection = () => {
       return;
     }
 
-    // Navigate to QuizScreen with the difficulty and username
     navigation.push('Quiz', {
       difficulty: difficulty,
       username: username,
@@ -34,32 +35,55 @@ const DifficultySelection = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Pokémon Quiz</Text>
-
-      {/* Username Input */}
-      <TextInput
-        style={styles.input}
-        placeholder="Enter your username"
-        value={username}
-        onChangeText={setUsername}
-      />
-
-      {/* Difficulty Dropdown */}
-      <Text style={styles.label}>Select Difficulty:</Text>
-      <Picker
-        style={styles.picker}
-        selectedValue={difficulty}
-        onValueChange={(itemValue) => setDifficulty(itemValue)}
+    <>
+      <View style={{ backgroundColor: theme === 'dark' ? '#1a1a1a' : '#fff' }}>
+        <ThemeToggler />
+      </View>
+      <View
+        style={[
+          styles.container,
+          { backgroundColor: theme === 'dark' ? '#1a1a1a' : '#fff' },
+        ]}
       >
-        <Picker.Item label="Easy" value="easy" />
-        <Picker.Item label="Medium" value="medium" />
-        <Picker.Item label="Hard" value="hard" />
-      </Picker>
+        <Text
+          style={[styles.title, { color: theme === 'dark' ? '#fff' : '#000' }]}
+        >
+          Pokémon Quiz
+        </Text>
 
-      {/* Continue Button */}
-      <Button onPress={handleContinuePress} title="Continue" />
-    </View>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your username"
+          value={username}
+          onChangeText={setUsername}
+        />
+
+        <Text
+          style={[styles.label, { color: theme === 'dark' ? '#fff' : '#000' }]}
+        >
+          Select Difficulty:
+        </Text>
+        <Picker
+          style={styles.picker}
+          selectedValue={difficulty}
+          onValueChange={(itemValue) => setDifficulty(itemValue)}
+        >
+          <Picker.Item label="Easy" value="easy" />
+          <Picker.Item label="Medium" value="medium" />
+          <Picker.Item label="Hard" value="hard" />
+        </Picker>
+
+        <View style={styles.buttonsContainer}>
+          <Button
+            title="See Score History"
+            onPress={() => {
+              navigation.push('ScoreHistory');
+            }}
+          />
+          <Button onPress={handleContinuePress} title="Continue" />
+        </View>
+      </View>
+    </>
   );
 };
 
@@ -69,7 +93,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#f5f5f5',
   },
   title: {
     fontSize: 24,
@@ -91,9 +114,6 @@ const styles = StyleSheet.create({
   picker: {
     width: '80%',
     height: 80,
-    borderColor: '#ff0000',
-    borderWidth: 2,
-    borderRadius: 5,
     marginBottom: 20,
     paddingLeft: 10,
   },
@@ -107,6 +127,11 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 16,
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '80%',
   },
 });
 

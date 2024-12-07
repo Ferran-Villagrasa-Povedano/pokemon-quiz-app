@@ -12,15 +12,15 @@ export default {
         },
         {
           image:
-            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/e/e3/latest/20160309230820/Squirtle.png/200px-Squirtle.png',
+            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/6/6e/latest/20230716212816/Litten.png/300px-Litten.png',
         },
         {
           image:
-            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/4/43/latest/20190406170624/Bulbasaur.png/200px-Bulbasaur.png',
+            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/0/0e/latest/20230705050814/Tepig.png/300px-Tepig.png',
         },
         {
           image:
-            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/77/latest/20150621181250/Pikachu.png/200px-Pikachu.png',
+            'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/9/9f/latest/20200827204158/Chimchar.png/300px-Chimchar.png',
         },
       ],
     },
