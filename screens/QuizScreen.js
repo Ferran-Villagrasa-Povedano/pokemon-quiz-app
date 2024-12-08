@@ -25,7 +25,7 @@ export default function QuizScreen({ route }) {
   const styles = createStyles(theme);
 
   const [questions, setQuestions] = useState(
-    shuffle(questionsData[difficulty]).slice(0, 1)
+    shuffle(questionsData[difficulty])
   );
   const [selectedQuestion, setSelectedQuestion] = useState(0);
   const [points, setPoints] = useState(0);
