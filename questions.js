@@ -176,7 +176,7 @@ export default {
     },
     {
       question: {
-        text: 'Quin tipus és neutral al tipus Elèctric?',
+        text: 'Contra quin tipus és ineficaç el tipus Elèctric?',
         image:
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/a/a2/latest/20230317204740/Energ%C3%ADa_Rayo_B%C3%A1sica_%28Escarlata_y_P%C3%BArpura_TCG%29.png/375px-Energ%C3%ADa_Rayo_B%C3%A1sica_%28Escarlata_y_P%C3%BArpura_TCG%29.png',
       },
@@ -252,7 +252,7 @@ export default {
     },
     {
       question: {
-        text: 'Quin s el Pokémon inicial de tipus Aigua a la regió de Hoenn?',
+        text: 'Quin és el Pokémon inicial de tipus Aigua a la regió de Hoenn?',
       },
       answers: [
         {
@@ -333,14 +333,14 @@ export default {
     },
     {
       question: {
-        text: 'Quina habilitat té Ditto que li permet transformar-se en uns altres Pokémon?',
+        text: 'Quina habilitat permet a Ditto transformar-se en un altre Pokémon?',
         image:
           'https://images.wikidexcdn.net/mwuploads/wikidex/thumb/0/03/latest/20230717180418/Ditto.png/200px-Ditto.png',
       },
       answers: [
         { text: 'Impostor', isCorrect: true },
         { text: 'Imitació' },
-        { text: 'Transformació' },
+        { text: 'Il·lusió' },
         { text: 'Metamorfosi' },
       ],
     },
@@ -420,7 +420,7 @@ export default {
     },
     {
       question: {
-        text: 'Quin Pokémon introduït a la regió de Galar té la forma regional de tipus Fantasma?',
+        text: 'Quin Pokémon té una forma regional de tipus Fantasma a Galar?',
       },
       answers: [
         {

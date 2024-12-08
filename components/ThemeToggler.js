@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity, StyleSheet, Appearance } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Appearance, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { DarkMode, LightMode } from './Icons';
 
 const ThemeToggler = () => {
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
+    backgroundColor: 'transparent',
   },
 });
 

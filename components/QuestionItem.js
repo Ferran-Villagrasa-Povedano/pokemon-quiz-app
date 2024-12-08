@@ -1,11 +1,15 @@
 import React, { useMemo } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import AnswerButton from './AnswerButton';
+import { Image, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { darkTheme, lightTheme } from '../theme';
 import { shuffle } from '../utils/shuffle';
+import AnswerButton from './AnswerButton';
 
 const QuestionItem = ({ question, onAnswer, disabled }) => {
   const { question: questionContent, answers } = question;
   const shuffledAnswers = useMemo(() => shuffle(answers), [answers]);
+
+  const theme = useColorScheme();
+  const styles = createStyles(theme);
 
   const onPressCallback = (answer) => {
     return () => {
@@ -60,42 +64,44 @@ const QuestionItem = ({ question, onAnswer, disabled }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    marginHorizontal: 20,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 3,
-  },
-  questionContainer: {
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  gridContainer: {
-    flexDirection: 'column',
-    paddingTop: 20,
-    paddingBottom: 10,
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginBottom: 10,
-  },
-  questionText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  questionImage: {
-    width: 150,
-    height: 150,
-    aspectRatio: 1,
-    resizeMode: 'contain',
-  },
-});
+const createStyles = (theme) =>
+  StyleSheet.create({
+    container: {
+      padding: 20,
+      marginHorizontal: 20,
+      backgroundColor: theme === 'dark' ? '#292929' : '#f0f0f0',
+      borderRadius: 8,
+      shadowColor: '#000',
+      shadowOpacity: 0.1,
+      shadowRadius: 5,
+      elevation: 3,
+    },
+    questionContainer: {
+      alignItems: 'center',
+      marginBottom: 10,
+    },
+    gridContainer: {
+      flexDirection: 'column',
+      paddingTop: 20,
+      paddingBottom: 10,
+    },
+    row: {
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      marginBottom: 10,
+    },
+    questionText: {
+      color: theme === 'dark' ? darkTheme.text : lightTheme.text,
+      fontSize: 18,
+      fontWeight: 'bold',
+      marginBottom: 20,
+    },
+    questionImage: {
+      width: 150,
+      height: 150,
+      aspectRatio: 1,
+      resizeMode: 'contain',
+    },
+  });
 
 export default QuestionItem;

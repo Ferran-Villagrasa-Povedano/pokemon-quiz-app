@@ -1,22 +1,25 @@
+import { Picker } from '@react-native-picker/picker';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation for navigation
 import React, { useState } from 'react';
 import {
-  View,
+  Alert,
+  Button,
+  StyleSheet,
   Text,
   TextInput,
-  StyleSheet,
-  Alert,
   useColorScheme,
+  View,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation for navigation
-import { Picker } from '@react-native-picker/picker';
-import { Button } from 'react-native';
 import ThemeToggler from '../components/ThemeToggler';
+import { darkTheme, lightTheme } from '../theme';
 
 const DifficultySelection = () => {
   const [username, setUsername] = useState('');
   const [difficulty, setDifficulty] = useState('easy');
   const navigation = useNavigation();
+
   const theme = useColorScheme();
+  const styles = createStyles(theme);
 
   const handleContinuePress = () => {
     if (!username) {
@@ -36,34 +39,25 @@ const DifficultySelection = () => {
 
   return (
     <>
-      <View style={{ backgroundColor: theme === 'dark' ? '#1a1a1a' : '#fff' }}>
+      <View style={styles.themeContainer}>
         <ThemeToggler />
       </View>
-      <View
-        style={[
-          styles.container,
-          { backgroundColor: theme === 'dark' ? '#1a1a1a' : '#fff' },
-        ]}
-      >
-        <Text
-          style={[styles.title, { color: theme === 'dark' ? '#fff' : '#000' }]}
-        >
-          Pokémon Quiz
-        </Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>Pokémon Quiz</Text>
 
         <TextInput
           style={styles.input}
+          placeholderTextColor={
+            theme === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'
+          }
           placeholder="Enter your username"
           value={username}
           onChangeText={setUsername}
         />
 
-        <Text
-          style={[styles.label, { color: theme === 'dark' ? '#fff' : '#000' }]}
-        >
-          Select Difficulty:
-        </Text>
+        <Text style={styles.label}>Select Difficulty:</Text>
         <Picker
+          dropdownIconColor={theme === 'dark' ? 'white' : 'black'}
           style={styles.picker}
           selectedValue={difficulty}
           onValueChange={(itemValue) => setDifficulty(itemValue)}
@@ -87,52 +81,56 @@ const DifficultySelection = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-  label: {
-    fontSize: 16,
-    marginBottom: 10,
-  },
-  input: {
-    width: '80%',
-    height: 40,
-    borderColor: '#ddd',
-    borderWidth: 2,
-    borderRadius: 5,
-    marginBottom: 20,
-    paddingLeft: 10,
-  },
-  picker: {
-    width: '80%',
-    height: 80,
-    marginBottom: 20,
-    paddingLeft: 10,
-  },
-  continueButton: {
-    backgroundColor: '#007bff',
-    padding: 15,
-    width: '80%',
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '80%',
-  },
-});
+const createStyles = (theme) =>
+  StyleSheet.create({
+    themeContainer: {
+      backgroundColor:
+        theme === 'dark' ? darkTheme.background : lightTheme.background,
+    },
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 20,
+      backgroundColor:
+        theme === 'dark' ? darkTheme.background : lightTheme.background,
+    },
+    title: {
+      fontSize: 24,
+      marginBottom: 20,
+      color: theme === 'dark' ? darkTheme.text : lightTheme.text,
+    },
+    label: {
+      fontSize: 16,
+      marginBottom: 10,
+      color: theme === 'dark' ? darkTheme.text : lightTheme.text,
+    },
+    input: {
+      width: '80%',
+      height: 40,
+      color: theme === 'dark' ? darkTheme.text : lightTheme.text,
+      borderColor: theme === 'dark' ? darkTheme.border : lightTheme.border,
+      borderWidth: 2,
+      borderRadius: 5,
+      marginBottom: 20,
+      paddingLeft: 10,
+    },
+    picker: {
+      width: '80%',
+      height: 80,
+      marginBottom: 20,
+      paddingLeft: 10,
+      color: theme === 'dark' ? darkTheme.text : lightTheme.text,
+      borderColor: theme === 'dark' ? darkTheme.border : lightTheme.border,
+      borderWidth: 2,
+      borderRadius: 5,
+    },
+    buttonsContainer: {
+      marginTop: 20,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: '80%',
+    },
+  });
 
 export default DifficultySelection;
