@@ -26,7 +26,7 @@ const createStyles = (theme) =>
   StyleSheet.create({
     answerButton: {
       alignItems: 'center',
-      backgroundColor: theme === 'dark' ? '#333' : '#f0f0f0',
+      backgroundColor: theme === 'dark' ? '#333' : '#b0b0b0',
       padding: 10,
       marginVertical: 5,
       borderRadius: 5,
